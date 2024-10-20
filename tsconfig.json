@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "jsx": "preserve",
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+    },
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+
+      "src/components/*.vue",
+      "src/components/**/*.vue",
+
+      "src/document/*.md",
+      "src/document/**/*.md",
+      "src/document/**/**/*.md",
+
+      ".vitepress/**/**/*.vue",
+      ".vitepress/**/*.ts",
+      ".vitepress/**/*.mts"
+    ],
+  }
+}
