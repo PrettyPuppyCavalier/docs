@@ -93,6 +93,7 @@ export default defineConfig({
                     text: 'Docker',
                     items: [
                         {text: '安装', link: '/document/docker/install'},
+                        {text: '命令', link: '/document/docker/command'},
                     ]
                 }
             ],
