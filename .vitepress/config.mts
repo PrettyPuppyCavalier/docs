@@ -85,6 +85,8 @@ export default defineConfig({
             {text: 'Home', link: '/'},
             {text: 'Docker', link: '/document/docker/install'},
             {text: 'Nuxt', link: '/document/nuxt/install'},
+            {text: 'CloudFlare', link: '/document/cloudflare/page/home'},
+
         ],
 
         sidebar: {
@@ -102,6 +104,32 @@ export default defineConfig({
                     text: 'Nuxt',
                     items: [
                         {text: '安装', link: '/document/nuxt/install'},
+                    ]
+                }
+            ],
+            '/document/cloudflare/': [
+                {
+                    text: 'Page',
+                    items: [
+                        {text: '介绍', link: '/document/cloudflare/page/home'},
+                    ]
+                },
+                {
+                    text: 'Worker',
+                    items: [
+                        {text: '介绍', link: '/document/cloudflare/worker/home'},
+                    ]
+                },
+                {
+                    text: 'KV',
+                    items: [
+                        {text: '介绍', link: '/document/cloudflare/kv/home'},
+                    ]
+                },
+                {
+                    text: 'D1',
+                    items: [
+                        {text: '介绍', link: '/document/cloudflare/d1/home'},
                     ]
                 }
             ],
