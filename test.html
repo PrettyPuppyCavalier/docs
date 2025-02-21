@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table cellpadding="4" cellspacing="0" frame="border" border="1" rules="all" data-header="6">
+    <thead align="left">
+    <tr>
+        <th align="left" colspan="4" valign="top"><p>参数名</p>
+        </th>
+        <th align="left" valign="top"><p>类型</p>
+        </th>
+        <th align="left" valign="top"><p>说明</p>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td colspan="4" valign="top"><p>data</p></td>
+        <td valign="top"><p>object</p></td>
+        <td valign="top"><p>一次推理返回的结果。</p></td>
+    </tr>
+    <tr>
+        <td rowspan="15" valign="top"><p>-</p></td>
+        <td colspan="3" valign="top"><p>id</p></td>
+        <td valign="top"><p>string</p></td>
+        <td valign="top"><p>请求ID。</p></td>
+    </tr>
+    <tr>
+        <td colspan="3" valign="top"><p>object</p></td>
+        <td valign="top"><p>string</p></td>
+        <td valign="top"><p>目前都返回"chat.completion.chunk"。</p></td>
+    </tr>
+    <tr>
+        <td colspan="3" valign="top"><p>created</p></td>
+        <td valign="top"><p>integer</p></td>
+        <td valign="top"><p>推理请求时间戳，精确到秒。</p></td>
+    </tr>
+    <tr>
+        <td colspan="3" valign="top"><p>model</p></td>
+        <td valign="top"><p>string</p></td>
+        <td valign="top"><p>使用的推理模型。</p></td>
+    </tr>
+    <tr>
+        <td colspan="3" valign="top"><p>full_text</p></td>
+        <td valign="top"><p>string</p></td>
+        <td valign="top"><p>
+            全量文本结果，配置项<span>“fullTextEnabled”</span>=true时才有此返回值。</p></td>
+    </tr>
+    <tr>
+        <td colspan="3" valign="top"><p>usage</p></td>
+        <td valign="top"><p>object</p></td>
+        <td valign="top"><p>推理结果统计数据。</p></td>
+    </tr>
+    <tr>
+        <td rowspan="3" valign="top"><p>-</p></td>
+        <td colspan="2" valign="top"><p>prompt_tokens</p></td>
+        <td valign="top"><p>int</p></td>
+        <td valign="top"><p>用户输入的prompt文本对应的token长度。</p></td>
+    </tr>
+    <tr>
+        <td colspan="2" valign="top"><p>completion_tokens</p></td>
+        <td valign="top"><p>int</p></td>
+        <td valign="top"><p>
+            推理结果token数量。PD场景下统计P和D推理结果的总token数量。当一个请求的推理长度上限取maxIterTimes的值时，D节点响应中completion_tokens数量为maxIterTimes+1，即增加了P推理结果的首token数量。</p></td>
+    </tr>
+    <tr>
+        <td colspan="2" valign="top"><p>total_tokens</p></td>
+        <td valign="top"><p>int</p></td>
+        <td valign="top"><p>请求和推理的总token数。</p></td>
+    </tr>
+    <tr>
+        <td colspan="3" valign="top"><p>choices</p></td>
+        <td valign="top"><p>list</p></td>
+        <td valign="top"><p>流式推理结果。</p></td>
+    </tr>
+    <tr>
+        <td rowspan="5" valign="top"><p>-</p></td>
+        <td colspan="2" valign="top"><p>index</p></td>
+        <td valign="top"><p>integer</p></td>
+        <td valign="top"><p>choices消息index，当前只能为0。</p></td>
+    </tr>
+    <tr>
+        <td colspan="2" valign="top"><p>delta</p></td>
+        <td valign="top"><p>object</p></td>
+        <td valign="top"><p>推理返回结果，最后一个响应为空。</p></td>
+    </tr>
+    <tr>
+        <td rowspan="2" valign="top"><p>-</p></td>
+        <td valign="top"><p>role</p></td>
+        <td valign="top"><p>string</p></td>
+        <td valign="top"><p>角色，目前都返回"assistant"。</p></td>
+    </tr>
+    <tr>
+        <td valign="top"><p>content</p></td>
+        <td valign="top"><p>string</p></td>
+        <td valign="top"><p>推理文本结果。</p></td>
+    </tr>
+    <tr>
+        <td colspan="2" valign="top"><p>finish_reason</p></td>
+        <td valign="top"><p>string</p></td>
+        <td valign="top"><p>结束原因，只在最后一次推理结果返回。</p>
+            <ul>
+                <li>stop：
+                    <ul>
+                        <li>请求被CANCEL或STOP，用户不感知，丢弃响应。</li>
+                        <li>请求执行中出错，响应输出为空，err_msg非空。</li>
+                        <li>请求输入校验异常，响应输出为空，err_msg非空。</li>
+                        <li>请求遇eos结束符正常结束。</li>
+                    </ul>
+                </li>
+                <li>length：
+                    <ul>
+                        <li>请求因达到最大序列长度而结束，响应为最后一轮迭代输出。</li>
+                        <li>请求因达到最大输出长度（包括请求和模型粒度）而结束，响应为最后一轮迭代输出。</li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    // 获取table元素
+    const table = document.querySelector('table')
+
+    // 遍历table的所有行和单元格
+    const cells = table.querySelectorAll('td, th')
+    cells.forEach(cell => {
+        // 删除每个单元格的headers属性
+        cell.removeAttribute('headers')
+    })
+
+    // 输出整个table的HTML结构
+    console.log(table.outerHTML)
+</script>
+</body>
+</html>
