@@ -11,13 +11,13 @@ description: 'Example section for showcasing API endpoints'
 
 **URL**：https://api.siliconstorm.ai/v1/chat/completions
 ```bash
-curl --location --request POST 'https://api.siliconstorm.ai/v1/chat/completions' \
---header 'Authorization: Bearer {ApiKey}' \
---header 'User-Agent: Apifox/1.0.0 (https://apifox.com)' \
---header 'Content-Type: application/json' \
---header 'Accept: */*' \
---header 'Host: api.siliconstorm.ai' \
---header 'Connection: keep-alive' \
+curl --location --request POST 'https://api.siliconstorm.ai/v1/chat/completions'
+--header 'Authorization: Bearer {ApiKey}'
+--header 'User-Agent: Apifox/1.0.0 (https://apifox.com)'
+--header 'Content-Type: application/json'
+--header 'Accept: */*'
+--header 'Host: api.siliconstorm.ai'
+--header 'Connection: keep-alive'
 --data-raw '{
   "model": "DeepSeek-R1",
   "messages": [
@@ -44,7 +44,7 @@ curl --location --request POST 'https://api.siliconstorm.ai/v1/chat/completions'
     <tbody><tr>
         <td colspan="4"><p>model</p></td>
         <td><p>必选</p></td>
-        <td><p>模型名。</p></td>
+        <td><p>模型名</p></td>
         <td><p>与<span>MindIE Server</span>配置文件中modelName的取值保持一致。</p></td>
     </tr>
     <tr>

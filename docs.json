@@ -9,15 +9,33 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
-
+    "languages": [
       {
-        "tab": "API Reference",
+        "language": "en",
         "groups": [
           {
             "group": "API Documentation",
             "pages": [
-              "api-reference/introduction"
+              "en/api-reference/chatCompletions",
+              "en/api-reference/requestParameters",
+              "en/api-reference/usageExamples",
+              "en/api-reference/sampleResponse",
+              "en/api-reference/streamingInference"
+            ]
+          }
+        ]
+      },
+      {
+        "language": "cn",
+        "groups": [
+          {
+            "group": "API 文档",
+            "pages": [
+              "cn/api-reference/chatCompletions",
+              "cn/api-reference/requestParameters",
+              "cn/api-reference/usageExamples",
+              "cn/api-reference/sampleResponse",
+              "cn/api-reference/streamingInference"
             ]
           }
         ]
