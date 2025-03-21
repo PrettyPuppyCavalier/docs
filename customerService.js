@@ -21,7 +21,7 @@ script.onload = function () {
         },
         auth: {
             type: 'token',
-            token: 'pat_********',
+            token: 'pat_sXnzeuecTR0xYUcvuxwyVQ4uKwJarRtF6PaPKJpTVTwPxQjCxYnZ5yK7NBSJyTLT',
             onRefreshToken: function () {
                 return 'pat_********';
             }
