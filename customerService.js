@@ -13,11 +13,9 @@ window.difyChatbotConfig = {
 const script = document.createElement('script')
 
 // 设置 script 标签的属性
-script.src = 'http://1.95.211.105/embed.min.js'
+script.src = './embed.min.js'
 script.id = 'sh6XCCISpQNdlw1U'
 script.defer = true
 
 // 将 <script> 标签添加到 <body> 的末尾
 document.body.appendChild(script)
-
-
