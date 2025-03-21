@@ -23,7 +23,7 @@ script.onload = function () {
             type: 'token',
             token: 'pat_sXnzeuecTR0xYUcvuxwyVQ4uKwJarRtF6PaPKJpTVTwPxQjCxYnZ5yK7NBSJyTLT',
             onRefreshToken: function () {
-                return 'pat_********';
+                return 'pat_sXnzeuecTR0xYUcvuxwyVQ4uKwJarRtF6PaPKJpTVTwPxQjCxYnZ5yK7NBSJyTLT';
             }
         }
     });
