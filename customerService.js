@@ -17,7 +17,7 @@ script.onload = function () {
             bot_id: '7484166014775967752',
         },
         componentProps: {
-            title: 'Coze',
+            title: 'Coding Master',
         },
         auth: {
             type: 'token',
